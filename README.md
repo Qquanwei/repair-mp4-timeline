@@ -1,10 +1,12 @@
 # repair-mp4-timeline
 
-使用 ffmpeg 重编码视频文件，修复时间轴缺失。
+使用 ffmpeg 重编码视频文件，修复时间轴缺失。(仅在Windows上进行过测试)
 
 ## 使用步骤
 
 1. 下载 ffmpeg 并添加到环境变量中
+
+一般 ffmpeg 使用 gyan 网站提供的即可，下载速度较快。https://www.gyan.dev/ffmpeg/builds/
 
 2. 安装 node v18 及以上版本
 
