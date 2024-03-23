@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const bar = new cliProgress.SingleBar(
   {
-    format: "处理文件进度: {bar} | {value}/{total} | {file}",
+    format: "处理文件进度: {bar} | {value}/{total} | {duration}s | {file}",
     hideCursor: true
   },
   cliProgress.Presets.shades_classic
