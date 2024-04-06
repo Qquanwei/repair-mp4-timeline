@@ -20,7 +20,7 @@ const main = async () => {
   console.log('一共匹配到:', files.length, '个文件需要处理');
   bar.start(total, 0);
   for (let file of files) {
-    const outputFilenae = file.replace('.mp4', '_tmp.mp4');
+    const outputFilename = file.replace('.mp4', '_tmp.mp4');
     cur++;
     bar.update(cur, {
       file: file,
@@ -35,10 +35,12 @@ const main = async () => {
         "-c",
         "copy",
         "-map",
-        "0",
+        "0:v",
+        "-map",
+        "0:a",
         "-f",
         "mp4",
-        outputFilenae
+        outputFilename
       ]);
       await new Promise((resolve, reject) => {
         let errStr = "";
@@ -58,7 +60,7 @@ const main = async () => {
         });
       });
       await new Promise((resolve, reject) => {
-        fs.rename(outputFilenae, file, (error) => {
+        fs.rename(outputFilename, file, (error) => {
           if (error) {
             reject(error);
           } else {
